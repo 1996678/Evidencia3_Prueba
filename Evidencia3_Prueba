@@ -876,25 +876,6 @@ except Exception:
 finally:
     conn.close()
     
-#registrar_nota() 
-#cancelar_nota()
-#recuperar_nota()
-#consulta_por_periodo_notas()
-#consultar_por_folio_notas()
-    
-#agregar_servicio()
-#buscar_servicio_por_clave()
-#buscar_servicio_por_nombre()
-#ordenar_servicio_por_clave()
-#ordenar_servicio_por_nombre()
-
-    
-    
-#agregar_cliente()
-#ordenar_cliente_por_clave()
-#ordenar_cliente_por_nombre()
-    
-
 
 while True:
     print("\nMenú Principal:")
@@ -991,40 +972,41 @@ while True:
             if opcion_submenu_servicios == 1:
                 agregar_servicio()
             elif opcion_submenu_servicios == 2:
-                print("SubMenú ")
-                print("1. Búsqueda por clave de servicio")
-                print("2. Búsqueda por nombre de servicio")
-                print("3. Listado de clientes registrados")
-                print("4. Volver al menú de servicios")
+                while True:
+                    print("SubMenú ")
+                    print("1. Búsqueda por clave de servicio")
+                    print("2. Búsqueda por nombre de servicio")
+                    print("3. Listado de clientes registrados")
+                    print("4. Volver al menú de servicios")
 
-                opcion_submenu_consultas_servicios = int(input("Seleccione una opción: "))
+                    opcion_submenu_consultas_servicios = int(input("Seleccione una opción: "))
 
-                if opcion_submenu_consultas_servicios == 1:
-                    buscar_servicio_por_clave()
-                    
-                elif opcion_submenu_consultas_servicios == 2:
-                    buscar_servicio_por_nombre()
-                    
-                elif opcion_submenu_consultas_servicios == 3:
-                    while True:
-                        print("Listado de servicios ")
-                        print("1. Ordenado por clave de servicio")
-                        print("2. Ordenado por nombre de servicio")
-                        print("3. Volver al menú de servicios")
+                    if opcion_submenu_consultas_servicios == 1:
+                        buscar_servicio_por_clave()
+                        
+                    elif opcion_submenu_consultas_servicios == 2:
+                        buscar_servicio_por_nombre()
+                        
+                    elif opcion_submenu_consultas_servicios == 3:
+                        while True:
+                            print("Listado de servicios ")
+                            print("1. Ordenado por clave de servicio")
+                            print("2. Ordenado por nombre de servicio")
+                            print("3. Volver al menú de servicios")
 
-                        opcion_submenu_orden_servicios = int(input("Seleccione una opción: "))
+                            opcion_submenu_orden_servicios = int(input("Seleccione una opción: "))
 
-                        if opcion_submenu_orden_servicios == 1:
-                            ordenar_servicio_por_clave()
-                            
-                        elif opcion_submenu_orden_servicios == 2:
-                            ordenar_servicio_por_nombre()
-                            
-                        elif opcion_submenu_orden_servicios == 3:
-                            break
+                            if opcion_submenu_orden_servicios == 1:
+                                ordenar_servicio_por_clave()
+                                
+                            elif opcion_submenu_orden_servicios == 2:
+                                ordenar_servicio_por_nombre()
+                                
+                            elif opcion_submenu_orden_servicios == 3:
+                                break
                 
-                elif opcion_submenu_consultas_servicios == 4:
-                    break
+                    elif opcion_submenu_consultas_servicios == 4:
+                        break
                 
                 else:
                     print("Opción no válida.")
@@ -1040,6 +1022,3 @@ while True:
         
     else:
         print("Opción no válida.")
-
-
-  
