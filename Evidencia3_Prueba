@@ -17,11 +17,9 @@ try:
         (clave_servicio INTEGER PRIMARY KEY, nombre_servicio TEXT NOT NULL, costo_servicio NUMBER);")
 
         mi_cursor.execute("CREATE TABLE IF NOT EXISTS notas (folio_nota INTEGER PRIMARY KEY, fecha_nota timestamp, clave_cliente INTEGER NOT NULL, total_nota NUMBER, estatus TEXT NOT NULL, FOREIGN KEY (clave_cliente) REFERENCES clientes (clave_cliente));")
-        #print (f"La clave asignada notas fue {mi_cursor.lastrowid}")
-#         
+        
         mi_cursor.execute("CREATE TABLE IF NOT EXISTS detalle_notas (id_detalle INTEGER PRIMARY KEY, folio_nota INTEGER NOT NULL, clave_servicio INTEGER NOT NULL, FOREIGN KEY (folio_nota) REFERENCES NOTAS (folio_nota), FOREIGN KEY (clave_servicio) REFERENCES servicios (clave_servicio));")
-        #print (f"La clave asignada detalle_notas fue {mi_cursor.lastrowid}")
-#         
+       
         print ('Tablas creadas exitosamente')
         
 #############################CLIENTES
@@ -29,6 +27,7 @@ try:
             while True:
                 try:
                     nombre_cliente=input("Ingrese el nombre del cliente: ").strip()
+                    nombre_cliente=nombre_cliente.capitalize()
                     if not nombre_cliente.strip():
                         print('NO SE PUEDE QUEDAR EL NOMBRE DEL CLIENTE EN BLANCO, INTENTE DE NUEVO')
                         continue
@@ -55,7 +54,6 @@ try:
                 except ValueError:
                     print('Ingrese un nombre válido. Intentélo de nuevo.')
                     continue
-                
                 
             while True:
                 try:
@@ -270,6 +268,7 @@ try:
             while True:
                 try:
                     nombre_servicio=input("Ingrese el nombre del servicio: ").strip()
+                    nombre_servicio=nombre_servicio.capitalize()
                     if not nombre_servicio.strip():
                         print('NO SE PUEDE QUEDAR EL NOMBRE DEL SERVICIO EN BLANCO, INTENTE DE NUEVO')
                         continue
@@ -279,7 +278,7 @@ try:
                     else:
                         break
                 except ValueError:
-                    print('Ingrese un nombreválido. Intentélo de nuevo.')
+                    print('Ingrese un nombre válido. Intentélo de nuevo.')
                     continue
                 
                     
@@ -510,15 +509,6 @@ try:
                 except Exception as e:
                     print(f"Ocurrió un error: {str(e)}")
                     
-
-
-
-
-
-
-
-            
- 
  ############################ NOTAS
         def capturar_fecha():
             while True:
@@ -1038,20 +1028,18 @@ while True:
                 
                 else:
                     print("Opción no válida.")
-                    
-                    
+
             elif opcion_submenu_servicios== 3:
                 break
             
             else:
                 print("Opción no válida.")
-                   
+                
     elif opcion_menu == 4:
         break
         
     else:
         print("Opción no válida.")
-
 
 
   
